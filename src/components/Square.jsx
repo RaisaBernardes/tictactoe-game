@@ -1,9 +1,9 @@
-const Square = ({value}) => {
-    return (
+const Square = ({ value }) => {
+  return (
     <button type="button" className="square">
-        {value}
+      {value}
     </button>
-    )
+  );
 };
 
 export default Square;
