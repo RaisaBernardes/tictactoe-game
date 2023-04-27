@@ -13,6 +13,7 @@ function App() {
 
   return (
     <div className="app">
+      <Board />
       <div>
         <button onClick={onBtnClick}>Click me</button>
         <div>{counter}</div>
