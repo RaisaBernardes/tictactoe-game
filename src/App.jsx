@@ -5,18 +5,18 @@ import { calculateWinner } from './winner';
 import StatusMessage from './components/StatusMessage';
 import History from './components/History';
 
+const NEW_GAME = [{squares: Array(9).fill(null), isXNext: false}]; //since this is static and we don't need to create a rerender, we keep it outside of app()
+
 function App() {
 
-  const[history, setHistory] = useState([
-    {squares: Array(9).fill(null), isXNext: false},
-  ])
+  const[history, setHistory] = useState(NEW_GAME);
 
   const [currentMove, setCurrentMove] = useState(0);
   const gamingBoard = history[currentMove]
 
   const winner = calculateWinner(gamingBoard.squares);
 
-  console.log({history, currentMove}); //************************** 
+  console.log({history, currentMove});
   
   const handleSquareClick = clickedPosition => {
     if(gamingBoard.squares[clickedPosition] || winner){
@@ -26,7 +26,9 @@ function App() {
 
       const isTraversing = currentMove + 1 !== currentHistory.lenght;
 
-      const lastGamingState = isTraversing ? currentHistory[currentMove] : currentHistory[currentHistory.length - 1];
+      const lastGamingState = isTraversing 
+      ? currentHistory[currentMove] 
+      : currentHistory[currentHistory.length - 1];
       
       const nextSquaresState =  lastGamingState.squares.map((squareValue, position) => {
             if(clickedPosition === position){
@@ -52,10 +54,23 @@ function App() {
     setCurrentMove(move);
   }
 
+  const onNewGameStart = () =>{
+    setHistory(NEW_GAME);
+    setCurrentMove(0);
+  }
+
   return (
     <div className="app">
       <StatusMessage winner={winner} gamingBoard={gamingBoard}/>
       <Board squares={gamingBoard.squares} handleSquareClick={handleSquareClick} />
+      
+      <button 
+      type='button' 
+      onClick={onNewGameStart} 
+      className={`btn-reset ${winner ? 'active' : ''}`}>
+      Start new game
+      </button>
+
       <h3>Game History</h3>
       <History history={history} moveTo={moveTo} currentMove={currentMove}/>
     </div>
