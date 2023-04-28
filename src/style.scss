@@ -1,5 +1,5 @@
-$green: #12e177;
-$orange: #ffc72a;
+$green: #49ffe1;
+$pink: #ee5bf3;
 $blue: #4c43d4;
 
 body {
@@ -30,8 +30,8 @@ button {
   color: $green;
 }
 
-.text-orange {
-  color: $orange;
+.text-pink {
+  color: $pink;
 }
 
 .history-wrapper {
@@ -84,9 +84,9 @@ button {
   margin-top: 25px;
   transition: all 0.2s;
   background-color: $blue;
-  box-shadow: 0px 0px 0px 1px $orange;
+  box-shadow: 0px 0px 0px 1px $pink;
   &.active {
-    background-color: $orange;
+    background-color: $pink;
     box-shadow: none;
   }
 }
@@ -147,7 +147,7 @@ button {
   }
 
   &:before {
-    background-color: $orange;
+    background-color: $pink;
     right: -75px;
     bottom: -75px;
     @media screen and (min-width: 476px) {
@@ -168,5 +168,98 @@ button {
       top: -110px;
       left: -110px;
     }
+  }
+}
+
+.bg-wrapper{
+  span{
+    position: fixed;
+    top: -120px;
+    height: 50px;
+    width: 50px;
+    z-index: -1;
+    animation: animate 10s linear infinite;
+  }
+  span:nth-child(1){
+    left: 60px;
+    animation-delay: 2s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(2){
+    left: 60%;
+    animation-delay: 3s;
+    width: 60px;
+    height: 60px;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(3){
+    left: 20%;
+    animation-delay: 2s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(4){
+    left: 10%;
+    animation-delay: 5s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(5){
+    left: 30%;
+    animation-delay: 1s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(6){
+    left: 30%;
+    animation-delay: 6s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(7){
+    left: 20%;
+    animation-delay: 4s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(8){
+    left: 70%;
+    animation-delay: 6s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(9){
+    left: 75%;
+    animation-delay: 1s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(10){
+    left: 90%;
+    animation-delay: 4s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+  span:nth-child(11){
+    left: 60%;
+    animation-delay: 3s;
+    color: #746ce6;
+    font-family: 'roboto';
+  }
+}
+
+@keyframes animate{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80%{
+    opacity: 0.7;
+  }
+  100%{
+    transform: translateY(800px) rotate(360deg);
+    opacity: 0;
   }
 }

@@ -82,6 +82,20 @@ function App() {
       <History history={history} moveTo={moveTo} currentMove={currentMove}/>
 
       <div className='bg-balls'></div>
+      
+      <div className='bg-wrapper'>
+        <span>X</span>
+        <span>O</span>
+        <span>X</span>
+        <span>O</span>
+        <span>X</span>
+        <span>O</span>
+        <span>X</span>
+        <span>O</span>
+        <span>X</span>
+        <span>O</span>
+        <span>X</span>
+      </div>
     </div>
   );
 }
